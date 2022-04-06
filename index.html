@@ -4,12 +4,14 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="./images/favicon.ico">
   <title>박상아 | 웹 퍼블리셔 포트폴리오</title>
   <!-- jQuery CDN -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <!-- TypeIt CDN -->
   <script src="https://unpkg.com/typeit@8.4.0/dist/index.umd.js"></script>
-  <!-- XEICON CDN -->
+  <!-- Font Awesome Kit & XEICON CDN -->
+  <script src="https://kit.fontawesome.com/69d15ff288.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="http://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
   <!-- Custom JS & CSS -->
   <link rel="stylesheet" href="./css/style.css">
@@ -19,7 +21,7 @@
   <div class="container">
     <header>
       <div class="header-inner">
-        <h1 class="logo"><a href="#none">상상</a></h1>
+        <h1 class="logo"><a href="#">상상</a></h1>
         <div class="header-info">
           Web Publisher
         </div>
@@ -95,76 +97,137 @@
         </div>
         <div class="about-skills">
           <h2>skills</h2>
-          <div class="skill-tab">
-            <input type="radio" name="skill" id="html5" checked>
-            <input type="radio" name="skill" id="css3">
-            <input type="radio" name="skill" id="jquery">
-            <input type="radio" name="skill" id="javascript">
-            <div class="skills">
-              <div class="skill">
-                <div class="percentage">
-                  <div class="graph">
-                    <span></span>
-                  </div>
-                  <h4>92%</h4>
-                </div>
-                <div class="skill-desc">
-                  <h4>HTML5</h4>
-                  <p>
-                    웹 표준과 웹 접근성을 준수한 사이트를 제작 가능합니다. 구조에 맞는 시맨틱 태그를 적절히 사용할 수 있습니다.
-                  </p>
-                </div>
+          <div class="starline"><i class="fa-solid fa-asterisk"></i></div>
+          <div class="skills">
+            <div class="skill">
+              <h2>HTML5</h2>
+              <div class="chart">
+                <h3 data-num="90"></h3>
+                <svg>
+                  <circle cx="100" cy="100" r="90"></circle>
+                </svg>
               </div>
-              <div class="skill">
-                <div class="percentage">
-                  <div class="graph">
-                    <span></span>
-                  </div>
-                  <h4>90%</h4>
-                </div>
-                <div class="skill-desc">
-                  <h4>CSS3</h4>
-                  <p>
-                    미디어 쿼리를 사용해 반응형 웹 사이트를 제작 가능합니다.
-                  </p>
-                </div>
-              </div>
-              <div class="skill">
-                <div class="percentage">
-                  <div class="graph">
-                    <span></span>
-                  </div>
-                  <h4>85%</h4>
-                </div>
-                <div class="skill-desc">
-                  <h4>jQuery</h4>
-                  <p>
-                    jQuery 문법 및 함수를 원활하게 적용이 가능합니다.
-                  </p>
-                </div>
-              </div>
-              <div class="skill">
-                <div class="percentage">
-                  <div class="graph">
-                    <span></span>
-                  </div>
-                  <h4>70%</h4>
-                </div>
-                <div class="skill-desc">
-                  <h4>Java Script</h4>
-                  <p>
-                    기본적인 문법과 기초를 이해, 활용합니다. JS 라이브러리와 플러그인을 적절하게 사용할 수 있습니다.
-                  </p>
-                </div>
-              </div>
+              <p>
+                웹 표준을 준수한 사이트를 제작 가능합니다. 구조에 맞는 시맨틱 태그를 적절히 사용할 수 있습니다.
+              </p>
             </div>
-            <div class="btn">
-              <label for="html5">html5</label>
-              <label for="css3">css3</label>
-              <label for="jquery">jquery</label>
-              <label for="javascript">javascript</label>
+            <div class="skill">
+              <h2>CSS3</h2>
+              <div class="chart">
+                <h3 data-num="90"></h3>
+                <svg>
+                  <circle cx="100" cy="100" r="90"></circle>
+                </svg>
+              </div>
+              <p>
+                미디어 쿼리를 사용해 반응형 웹 사이트를 제작 가능합니다.
+              </p>
+            </div>
+            <div class="skill">
+              <h2>JavaScript</h2>
+              <div class="chart">
+                <h3 data-num="75"></h3>
+                <svg>
+                  <circle cx="100" cy="100" r="90"></circle>
+                </svg>
+              </div>
+              <p>
+                기본적인 문법과 기초를 이해, 활용합니다. JS 라이브러리와 플러그인을 적절하게 사용할 수 있습니다.
+              </p>
+            </div>
+            <div class="skill">
+              <h2>jQuery</h2>
+              <div class="chart">
+                <h3 data-num="80"></h3>
+                <svg>
+                  <circle cx="100" cy="100" r="90"></circle>
+                </svg>
+              </div>
+              <p>
+                jQuery 문법 및 함수를 원활하게 적용이 가능합니다.
+              </p>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+    <section class="works">
+      <div class="works-inner">
+        <h2>아래는 저의 작업물입니다!</h2>
+        <input type="radio" name="worktab" id="work1" checked>
+        <input type="radio" name="worktab" id="work2">
+        <input type="radio" name="worktab" id="work3">
+        <div class="work-tabs">
+          <article data-text="01">
+            <div class="work-photo">
+              <img src="./images/work01.jpg" alt="포트폴리오01">
+            </div>
+            <div class="work-desc">
+              <h3>responsive web</h3>
+              <p>
+                <img src="./images/inflearn.jpg" alt="인프런로고이미지">코딩웍스님의 강의를 토대로 만든 반응형 웹사이트입니다. 기존 웹사이트 제작 방식인 float와 position 속성을 이용해 레이아웃을 제작했습니다.
+              </p>
+              <p>
+                스크롤 시 화면이 전환되는 애니메이션을 적용하기 위한 <span>velocity</span>, 모달창을 띄우기 위한 <span>Featherlight</span>, 간단한 코드로 슬라이드를 만들 수 있는 <span>slick</span> 플러그인을 사용 · 커스텀했습니다.
+              </p>
+              <div class="hash">
+                <em>#HTML5</em>
+                <em>#CSS3</em>
+                <em>#jQuery</em>
+                <em>#반응형</em>
+              </div>
+              <a class="btn-more" href="http://sangahosting.dothome.co.kr/responsive_1/" target="_blank">자세히 보기</a>
+            </div>
+          </article>
+          <article data-text="02">
+            <div class="work-photo">
+              <img src="./images/work02.jpg" alt="포트폴리오02">
+            </div>
+            <div class="work-desc">
+              <h3>responsive web</h3>
+              <p>
+                <img src="./images/inflearn.jpg" alt="인프런로고이미지">코딩웍스님의 강의를 토대로 만든 반응형 웹사이트입니다. 기존 웹사이트 제작 방식인 float와 position속성과 현재에 이르러서 대중적으로 사용되는 flexbox 속성을 적절히 사용하여 레이아웃을 배치했습니다.
+              </p>
+              <p>
+                간단한 코드로 슬라이드를 만들 수 있는 <span>slick</span>, 스크롤 시 애니메이션이 작동하는 <span>wow</span> 플러그인을 사용 · 커스텀했습니다.
+              </p>
+              <div class="hash">
+                <em>#HTML5</em>
+                <em>#CSS3</em>
+                <em>#JavaScript</em>
+                <em>#jQuery</em>
+                <em>#반응형</em>
+              </div>
+              <a class="btn-more" href="http://sangahosting.dothome.co.kr/responsive_2/" target="_blank">자세히 보기</a>
+            </div>
+          </article>
+          <article data-text="03">
+            <div class="work-photo">
+              <img src="./images/work03.jpg" alt="포트폴리오03">
+            </div>
+            <div class="work-desc">
+              <h3>sulhwasoo</h3>
+              <p>
+                기존에 존재하는 설화수 홈페이지를 클론코딩했습니다. 제작에 사용된 모든 이미지는 설화수 홈페이지에서 추출했습니다. 그 외는 픽사베이 등의 저작권 무료 사이트에서 다운로드 받아 사용했습니다. 레이아웃 배치는 float, position, flexbox 속성을 활용했습니다.
+              </p>
+              <p>
+                간단히 슬라이드를 만들 수 있는 <span>slick</span> 플러그인을 사용 · 커스텀해 사이트를 구현했습니다.
+              </p>
+              <div class="hash">
+                <em>#HTML5</em>
+                <em>#CSS3</em>
+                <em>#JavaScript</em>
+                <em>#jQuery</em>
+                <em>#반응형</em>
+              </div>
+              <a class="btn-more" href="http://sangahosting.dothome.co.kr/sulhwasoo/" target="_blank">자세히 보기</a>
+            </div>
+          </article>
+        </div>
+        <div class="btns">
+          <label for="work1"></label>
+          <label for="work2"></label>
+          <label for="work3"></label>
         </div>
       </div>
     </section>

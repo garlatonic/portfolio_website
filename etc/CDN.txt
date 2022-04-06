@@ -23,6 +23,10 @@ font-family: 'Raleway', sans-serif;
 @import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500&display=swap');
 font-family: 'Montserrat', sans-serif;
 
+/* Google Web Font : Oswald */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
+font-family: 'Oswald', sans-serif;
+
 /* NoonNoo Web Font : NEXON Lv2 Gothic */
 @font-face {
     font-family: 'NEXON Lv2 Gothic';

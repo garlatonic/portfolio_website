@@ -3,13 +3,25 @@
 /* Google Web Font : Noto Sans KR */
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
 
-/* Noonnu Web Font : Ugro Bold */
+/* Google Web Font : Raleway */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400;500;600;700;800;900&display=swap');
+
+/* Noonnu Web Font : 어그로 Bold */
 @font-face {
   font-family: 'SBAggroB';
   src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SBAggroB.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
+
+/* Noonnu Web Font : 세방고딕 Bold */
+@font-face {
+  font-family: 'SEBANG_Gothic_Bold';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2104@1.0/SEBANG_Gothic_Bold.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 
 /* Defalut CSS */
 * {
@@ -31,14 +43,20 @@ a {
 /* ################ Header ################ */
 header {
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   position: fixed;
   left: 0;
   top: 0;
   width: 100%;
-  height: 70px;
+  height: 80px;
   margin: auto;
   padding: 0 40px;
+  z-index: 999;
+  transition: 0.4s;
+}
+header.active {
+  background-color: #fff;
+  box-shadow: 0 3px 5px rgba(117, 117, 117, 0.2);
 }
 .header-inner {
   display: flex;
@@ -55,6 +73,7 @@ h1.logo {
 }
 h1.logo a {
   display: inline-block;
+  padding-top: 6px;
 }
 .header-info {
   font-size: 14px;
@@ -129,6 +148,9 @@ nav {
 .welcome {
   margin-top: 80px;
   padding: 10px 50px;
+}
+.welcome.hide {
+  transform: scale(0);
 }
 .msg {
   display: flex;
@@ -266,29 +288,29 @@ nav {
 }
 .about-inner {
   position: relative;
-  padding: 50px;
+  padding: 50px 0;
   width: 100%;
   background-color: #fff;
 }
 .about-photo {
   position: absolute;
-  left: 50px;
-  top: -40px;
-  width: 500px;
-  height: 340px;
+  left: 70px;
+  top: -50px;
+  width: 600px;
+  height: 400px;
   background: #000;
 }
 .about-photo::before {
   content: '';
   position: absolute;
-  left: -10px;
-  top: -10px;
+  left: -20px;
+  top: -20px;
   width: 100%;
   height: 100%;
-  border: 1.5px solid #ffeb33;
+  border: 2px solid #ffeb33;
 }
 .about-profile {
-  margin-left: 550px;
+  margin-left: 750px;
   margin-top: 30px;
 }
 .about-profile h2 {
@@ -334,12 +356,273 @@ nav {
   margin-left: 10px;
 }
 .about-section {
-  margin-top: 100px;
+  margin: 150px 50px 100px;
 }
 .about-section p {
   padding: 10px 0;
 }
 /* Skill */
 .about-skills {
-  border: 1px solid #000;
+  padding: 80px 0 100px;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+.about-skills > h2 {
+  padding: 30px;
+  font-size: 52px;
+  text-transform: uppercase;
+}
+.starline {
+  position: relative;
+  padding: 10px 0;
+}
+.starline::before,
+.starline::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100px;
+  height: 3px;
+  background-color: #222;
+  border-radius: 2px;
+}
+.starline::before {
+  left: 50%;
+  margin-left: 30px;
+}
+.starline::after {
+  right: 50%;
+  margin-right: 30px;
+}
+.skills {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+.skill {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 17%;
+  min-width: 270px;
+  height: 450px;
+  margin: 10px 5px;
+  padding: 30px 10px;
+  background-color: #fff;
+  box-shadow: 0 10px 15px rgba(117, 117, 117, 0.5);
+  transition: 0.2s ease-in;
+  border-radius: 5px;
+}
+.skill:hover {
+  margin-top: 0px;
+  box-shadow: 0 20px 15px rgba(117, 117, 117, 0.5);
+}
+.skill h2 {
+  position: relative;
+  width: 100%;
+  padding: 15px 0;
+  font-size: 30px;
+  font-family: 'SEBANG_Gothic_Bold';
+}
+.skill h2::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #eee;
+}
+.chart {
+  position: relative;
+  margin: 15px 0;
+}
+.chart h3 {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 28px;
+  font-style: italic;
+  font-family: 'SEBANG_Gothic_Bold';
+}
+.chart svg {
+  width: 200px;
+  height: 200px;
+}
+.chart circle {
+  fill: #f4f4f4;
+  stroke-width: 15;
+  stroke-dasharray: 565;
+  stroke-dashoffset: 0;
+  stroke-linecap: round;
+  transform: rotate(-90deg);
+  transform-origin: center center;
+}
+.skill:nth-child(1) circle {
+  stroke: #f25320;
+}
+.skill:nth-child(2) circle {
+  stroke: #3492cb;
+}
+.skill:nth-child(3) circle {
+  stroke: #ffc114;
+}
+.skill:nth-child(4) circle {
+  stroke: #00cef5;
+}
+.skill p {
+  padding: 0 15px;
+  font-size: 15px;
+  line-height: 1.5em;
+  color: #444;
+}
+
+/* ################ Section :: works ################ */
+.works {
+  padding: 40px;
+  background-color: #fff;
+}
+.works-inner {
+  position: relative;
+  overflow: hidden;
+}
+.works-inner h2 {
+  padding: 20px 0 100px;
+  color: #fff;
+  font-size: 52px;
+  text-align: center;
+  text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+.work-tabs {
+  display: flex;
+  width: 300%;
+  transition: 0.4s;
+}
+.work-tabs article {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  width: calc(100% / 3);
+  height: calc(90vh - 80px);
+  min-height: 670px;
+  border: 1px solid #eee;
+}
+.work-tabs article::before {
+  content: attr(data-text);
+  position: absolute;
+  right: 30px;
+  top: 80px;
+  font-size: 120px;
+  font-family: 'SBAggroB';
+  letter-spacing: -7px;
+  color: #ddd;
+}
+.work-photo {
+  width: 65%;
+}
+.work-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.work-desc {
+  position: relative;
+  width: 35%;
+  padding: 40px 30px;
+}
+.works-desc::before {
+  display: none;
+  content: attr(data-text);
+}
+.work-desc h3 {
+  position: relative;
+  padding: 40px 0 20px;
+  font-size: 42px;
+  line-height: 2em;
+  text-transform: capitalize;
+  letter-spacing: -1px;
+  font-family: 'Raleway', sans-serif;
+}
+.work-desc h3::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 10px;
+  width: 100%;
+  height: 1px;
+  background-color: #eee;
+}
+.work-desc img {
+  height: 14px;
+  margin-top: -6px;
+  vertical-align: middle;
+}
+.work-desc p {
+  padding: 5px 0;
+  color: #444;
+}
+.hash {
+  margin: 20px 0 40px;
+  font-size: 16px;
+}
+.hash em {
+  color: #475a4a;
+  font-style: normal;
+}
+.btn-more {
+  padding: 10px 30px;
+  color: #222;
+  border: 1px solid #222;
+  transition: 0.4s;
+}
+.btn-more:hover {
+  background-color: #222;
+  border-color: transparent;
+  color: #fff;
+}
+
+/* works slide */
+input[name="worktab"] {
+  display: none;
+}
+.btns {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 35%;
+  text-align: center;
+}
+.btns label {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin: 10px;
+  background-color: #fff;
+  border: 2px solid #222;
+  border-radius: 50%;
+  transition: 0.4s;
+}
+input[id="work1"]:checked ~ .btns label[for="work1"],
+input[id="work2"]:checked ~ .btns label[for="work2"],
+input[id="work3"]:checked ~ .btns label[for="work3"] {
+  background-color: #444;
+  border-color: #fff;
+  box-shadow: 0 0 0 5px #739178;
+}
+input[id="work1"]:checked ~ .work-tabs {
+  margin-left: 0;
+}
+input[id="work2"]:checked ~ .work-tabs {
+  margin-left: -100%;
+}
+input[id="work3"]:checked ~ .work-tabs {
+  margin-left: -200%;
 }
