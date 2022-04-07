@@ -29,11 +29,12 @@
   box-sizing: border-box;
 }
 body {
+  position: relative;
   margin: 0;
-  background-color: #f4f4f4;
+  background-color: #fff;
   font-family: 'Noto Sans KR', sans-serif;
-  line-height: 1.8em;
   font-size: 18px;
+  line-height: 1.8em;
 }
 a {
   color: #222;
@@ -71,6 +72,11 @@ h1.logo {
   font-family: 'SBAggroB';
   font-size: 32px;
 }
+h1.logo a,
+.header-info {
+  color: #fff;
+  transition: 0.4s;
+}
 h1.logo a {
   display: inline-block;
   padding-top: 6px;
@@ -79,64 +85,21 @@ h1.logo a {
   font-size: 14px;
   font-style: italic;
 }
+header.active h1.logo a,
+header.active .header-info {
+  color: #222;
+}
 
-#trigger {
-  display: none;
-  position: relative;
-  width: 30px;
-  height: 24px;
-}
-#trigger span {
-  position: absolute;
-  width: 100%;
-  height: 4px;
-  background-color: #222;
-  transition: 0.4s;
-}
-#trigger span:nth-child(1) {
-  left: 0;
-  top: 0;
-}
-#trigger span:nth-child(2) {
-  width: 80%;
-  left: 0;
-  top: 10px;
-}
-#trigger span:nth-child(3) {
-  left: 0;
-  bottom: 0;
-}
-#trigger:hover span:nth-child(1) {
-  top: 10px;
-  transform: rotate(45deg);
-}
-#trigger:hover span:nth-child(2) {
-  width: 0;
-  opacity: 0;
-}
-#trigger:hover span:nth-child(3) {
-  bottom: 10px;
-  transform: rotate(-45deg);
-}
-nav {
-  display: none;
-  position: fixed;
-  left: 0;
-  top: 0;
-  border: 1px solid #000;
-}
-.nav-inner {
-  display: flex;
-  flex-direction: column;
-}
+#trigger, nav { display: none; }
 
 /* ################ Section :: main ################ */
-.main {
+#main {
   position: fixed;
   width: 100%;
   height: 100vh;
   padding: 30px;
-  background-color: #b2c7d9;
+  background: url("../images/main-pc.jpg") no-repeat bottom;
+  background-size: cover;
   z-index: -1;
 }
 .main-inner {
@@ -148,12 +111,14 @@ nav {
 .welcome {
   margin-top: 80px;
   padding: 10px 50px;
+  transition: 1s ease;
 }
 .welcome.hide {
   transform: scale(0);
 }
 .msg {
   display: flex;
+  justify-content: baseline;
   align-items: flex-end;
   margin: 8px 0;
   opacity: 0;
@@ -175,7 +140,7 @@ nav {
   position: relative;
   margin-left: 20px;
   padding: 15px 15px;
-  font-size: 20px;
+  font-size: 24px;
   background-color: #fff;
   border-radius: 5px;
   box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.1);
@@ -198,7 +163,7 @@ nav {
 }
 .msg-box img {
   display: block;
-  width: 200px;
+  width: 300px;
 }
 .welcome .msg:nth-child(1) {
   animation: slideUp 0.7s both;
@@ -215,7 +180,6 @@ nav {
 .welcome .msg:nth-child(5) {
   animation: slideUp 0.7s 2.4s both;
 }
-.welcome-animation { display: none;}
 .slide-down {
   position: absolute;
   right: 40px;
@@ -262,33 +226,14 @@ nav {
   animation: fadeIn 1s 0.8s alternate-reverse infinite;
 }
 
-@keyframes slideUp {
-  0% {
-    margin-top: 20px;
-    opacity: 0;
-  }
-  100% {
-    margin-top: 8px;
-    opacity: 1;
-  }
-}
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
 /* ################ Section :: about ################ */
-.about {
+#about {
   padding-top: calc(100vh + 200px);
-  background: transparent;
+  background-color: transparent;
 }
 .about-inner {
   position: relative;
-  padding: 50px 0;
+  padding: 50px 0 0;
   width: 100%;
   background-color: #fff;
 }
@@ -298,7 +243,6 @@ nav {
   top: -50px;
   width: 600px;
   height: 400px;
-  background: #000;
 }
 .about-photo::before {
   content: '';
@@ -309,23 +253,28 @@ nav {
   height: 100%;
   border: 2px solid #ffeb33;
 }
+.about-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 .about-profile {
   margin-left: 750px;
   margin-top: 30px;
 }
 .about-profile h2 {
-  padding-bottom: 10px;
-  font-size: 44px;
+  padding: 10px 0 30px;
+  font-size: 50px;
 }
 .about-profile h2 span {
   color: #666;
-  font-size: 16px;
+  font-size: 20px;
   font-weight: 400;
   font-style: italic;
 }
 .about-profile h3 {
   padding: 20px 0;
-  font-size: 24px;
+  font-size: 28px;
   text-transform: uppercase;
 }
 .about-profile h3 span {
@@ -343,20 +292,15 @@ nav {
   z-index: -1;
   animation: highlighter 2s cubic-bezier(0.075, 0.82, 0.165, 1) both;
 }
-@keyframes highlighter {
-  100% {
-    width: calc(100% + 50px);
-  }
-}
 .about-profile p {
-  font-size: 16px;
+  font-size: 14px;
   line-height: 1.5em;
 }
 .about-profile p span {
   margin-left: 10px;
 }
 .about-section {
-  margin: 150px 50px 100px;
+  margin: 130px 50px 100px;
 }
 .about-section p {
   padding: 10px 0;
@@ -401,13 +345,22 @@ nav {
   justify-content: center;
   margin-top: 10px;
 }
+.skill-wrap {
+  display: flex;
+}
+.skill-wrap:nth-of-type(1) {
+  justify-content: end;
+}
+.skill-wrap:nth-of-type(2) {
+  justify-content: start;
+}
 .skill {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 17%;
+  width: 20%;
   min-width: 270px;
-  height: 450px;
+  height: 460px;
   margin: 10px 5px;
   padding: 30px 10px;
   background-color: #fff;
@@ -461,44 +414,46 @@ nav {
   transform: rotate(-90deg);
   transform-origin: center center;
 }
-.skill:nth-child(1) circle {
+.skill-wrap:nth-of-type(1) .skill:nth-child(1) circle {
   stroke: #f25320;
 }
-.skill:nth-child(2) circle {
+.skill-wrap:nth-of-type(1) .skill:nth-child(2) circle {
   stroke: #3492cb;
 }
-.skill:nth-child(3) circle {
+.skill-wrap:nth-of-type(2) .skill:nth-child(1) circle {
   stroke: #ffc114;
 }
-.skill:nth-child(4) circle {
+.skill-wrap:nth-of-type(2) .skill:nth-child(2) circle {
   stroke: #00cef5;
 }
 .skill p {
-  padding: 0 15px;
-  font-size: 15px;
+  padding: 0 30px;
+  font-size: 16px;
   line-height: 1.5em;
   color: #444;
 }
 
 /* ################ Section :: works ################ */
-.works {
-  padding: 40px;
+.works-inner {
+  padding: 80px 40px 40px;
   background-color: #fff;
 }
-.works-inner {
-  position: relative;
-  overflow: hidden;
-}
 .works-inner h2 {
-  padding: 20px 0 100px;
+  padding: 20px;
   color: #fff;
-  font-size: 52px;
+  font-size: 72px;
   text-align: center;
   text-shadow:
     -1px -1px 0 #000,
     1px -1px 0 #000,
     -1px 1px 0 #000,
     1px 1px 0 #000;
+}
+.works-slide {
+  position: relative;
+  width: 100%;
+  margin-top: 50px;
+  overflow: hidden;
 }
 .work-tabs {
   display: flex;
@@ -522,7 +477,7 @@ nav {
   font-size: 120px;
   font-family: 'SBAggroB';
   letter-spacing: -7px;
-  color: #ddd;
+  color: rgba(221, 221, 221, 0.6);
 }
 .work-photo {
   width: 65%;
@@ -537,10 +492,6 @@ nav {
   position: relative;
   width: 35%;
   padding: 40px 30px;
-}
-.works-desc::before {
-  display: none;
-  content: attr(data-text);
 }
 .work-desc h3 {
   position: relative;
@@ -588,7 +539,6 @@ nav {
   border-color: transparent;
   color: #fff;
 }
-
 /* works slide */
 input[name="worktab"] {
   display: none;
@@ -596,8 +546,9 @@ input[name="worktab"] {
 .btns {
   position: absolute;
   right: 0;
-  bottom: 0;
+  bottom: 30px;
   width: 35%;
+  height: 40px;
   text-align: center;
 }
 .btns label {
@@ -625,4 +576,96 @@ input[id="work2"]:checked ~ .work-tabs {
 }
 input[id="work3"]:checked ~ .work-tabs {
   margin-left: -200%;
+}
+
+/* ################ Section :: contact ################ */
+.contact-inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background-color: #fff;
+  text-align: center;
+}
+.contact-wrap h2 {
+  font-size: 32px;
+}
+.contact-wrap a {
+  display: block;
+  padding: 60px 0 80px;
+  font-size: 70px;
+  font-weight: bold;
+  transition: 0.4s cubic-bezier(0.075, 0.82, 0.165, 1)
+}
+.contact-wrap a:hover {
+  transform: scale(1.2);
+  color: #ffc400;
+}
+.contact-wrap h4 {
+  font-weight: 400;
+  color: #777;
+}
+.contact-wrap a:hover ~ h4 {
+  animation: wave 0.8s 0.4s alternate infinite;
+}
+
+/* ################ Footer ################ */
+footer {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 15px 40px;
+  font-family: 'SBAggroB';
+  font-size: 14px;
+}
+.footer-inner a,
+.footer-inner span {
+  color: #888;
+  transition: 0.4s;
+}
+.footer-inner a:hover,
+.footer-inner span:hover {
+  color: #222;
+}
+
+
+
+
+@keyframes slideUp {
+  0% {
+    margin-top: 20px;
+    opacity: 0;
+  }
+  100% {
+    margin-top: 8px;
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes highlighter {
+  100% {
+    width: calc(100% + 50px);
+  }
+}
+@keyframes wave {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(10px);
+  }
 }

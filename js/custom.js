@@ -5,7 +5,7 @@ $(function(){
   var skill = $ ('.about-skills');
   var skillOff = skill.offset().top - 700;
   var excuted = false;
-  var windowHeight = $(window).innerHeight();
+  var windowHeight = $(window).innerHeight() - 50;
 
   $(window).scroll(function(){
     var windowSCR = $(this).scrollTop();
@@ -14,16 +14,16 @@ $(function(){
         animateChart();
         excuted = true;
       };
-      console(excuted);
     }else if(windowSCR > windowHeight){ // Header Active
       $('header').addClass('active');
+    }else if(windowSCR > 200) {
+      $('.welcome').css('opacity','0');
     }else { // Clear
       $('header').removeClass('active');
+      $('.welcome').css('opacity','1');
       excuted = false;
     };
   });
-
-
 
   function animateChart(){
     chart.each(function(){
@@ -44,4 +44,24 @@ $(function(){
       });
     }); //chart.each
   }
+
+  /* Trigger Event */
+  var $trigger = $('#trigger');
+  var $nav = $('nav');
+  $trigger.click(function(){
+    $trigger.toggleClass('active');
+    $nav.toggleClass('active');
+  });
+
+  /* Smooth Scrolling */
+  $('.logo a, .nav-inner a').click(function(e){
+    e.preventDefault();
+    $.scrollTo(this.hash || 0, 900);
+    $trigger.removeClass('active');
+    $nav.removeClass('active');
+  });
+  $('section').click(function(e){
+    $trigger.removeClass('active');
+    $nav.removeClass('active');
+  });
 });

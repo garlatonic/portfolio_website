@@ -1,0 +1,498 @@
+@charset "utf-8";
+
+/* 기존 Style.css min-width: 1400px */
+@media screen and (max-width: 1399px) {
+  /* Defalut CSS */
+  body {
+    font-size: 16px;
+  }
+  /* ################ Section :: main ################ */
+  .welcome {
+    margin-top: 60px;
+  }
+  .profile {
+    width: 60px;
+    height: 40px;
+  }
+  .msg.photo .profile {
+    height: 60px;
+  }
+  .msg-box {
+    font-size: 18px;
+    padding: 10px 15px;
+  }
+  .msg-box img {
+    width: 200px;
+  }
+
+  /* ################ Section :: about ################ */
+  .about-photo {
+    left: 60px;
+    width: 500px;
+    height: 350px;
+  }
+  .about-profile {
+    margin-left: 620px;
+    margin-top: 20px;
+  }
+  .about-profile h2 {
+    font-size: 46px;
+  }
+  .about-profile h2 span {
+    font-size: 18px;
+  }
+  .about-profile h3 {
+    font-size: 24px;
+  }
+  .about-section {
+    margin: 100px 40px 100px;
+  }
+  /* Skill */
+  .about-skills {
+    padding: 50px 0 70px;
+  }
+  .about-skills > h2 {
+    font-size: 48px;
+  }
+  .skill {
+    min-width: 250px;
+    height: 420px;
+    padding: 20px 10px;
+  }
+  .skill h2 {
+    font-size: 26px;
+  }
+  .chart h3 {
+    font-size: 24px;
+  }
+  .skill p {
+    padding: 0 15px;
+    font-size: 14px;
+  }
+
+  /* ################ Section :: works ################ */
+  .works-inner h2 {
+    font-size: 60px;
+  }
+  .work-tabs article::before {
+    top: 60px;
+    font-size: 100px;
+  }
+  .work-desc h3 {
+    padding: 25px 0 20px;
+    font-size: 32px;
+  }
+  .hash em {
+    font-size: 14px;
+  }
+
+  /* ################ Section :: contact ################ */
+  .contact-wrap h2 {
+    font-size: 28px;
+  }
+  .contact-wrap a {
+    padding: 60px 0 80px;
+    font-size: 60px;
+  }
+}
+
+@media screen and (max-width: 1099px) {
+  /* Defalut CSS */
+  body {
+    font-size: 18px;
+  }
+
+  /* ################ Header ################ */
+  .header-info { display: none; }
+  #trigger {
+    display: block;
+    position: fixed;
+    right: 40px;
+    width: 30px;
+    height: 24px;
+    z-index: 999;
+    cursor: pointer;
+  }
+  #trigger span {
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    background-color: #fff;
+    transition: 0.4s;
+  }
+  header.active #trigger span,
+  #trigger.active span {
+    background-color: #222;
+  }
+  #trigger span:nth-child(1) {
+    left: 0;
+    top: 0;
+  }
+  #trigger span:nth-child(2) {
+    width: 80%;
+    left: 0;
+    top: 10px;
+  }
+  #trigger span:nth-child(3) {
+    left: 0;
+    bottom: 0;
+  }
+  #trigger.active span:nth-child(1) {
+    top: 10px;
+    transform: rotate(45deg);
+  }
+  #trigger.active span:nth-child(2) {
+    width: 0;
+    opacity: 0;
+  }
+  #trigger.active span:nth-child(3) {
+    bottom: 10px;
+    transform: rotate(-45deg);
+  }
+  nav {
+    display: block;
+    position: fixed;
+    right: -51%;
+    top: 0;
+    width: 50%;
+    height: 100vh;
+    background-color: #fff;
+    box-shadow: -1px 0 5px rgba(115,115,115,0.5);
+    transition: 0.4s;
+  }
+  nav.active {
+    right: 0;
+  }
+  .nav-inner {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    padding: 40px;
+    justify-content: center;
+  }
+  .nav-inner a {
+    position: relative;
+    margin: 15px 0;
+    line-height: 2em;
+    font-size: 50px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    transition: 0.4s;
+    overflow: hidden;
+  }
+  .nav-inner a:hover {
+    padding-left: 40px;
+  }
+  .nav-inner a::before {
+    position: absolute;
+    left: -40px;
+    content: "\e940";
+    font-family: xeicon;
+    font-size: 36px;
+    transition: 0.4s;
+  }
+  .nav-inner a:hover::before {
+    left: 0;
+  }
+
+  /* ################ Section :: main ################ */
+  #main {
+    padding: 40px;
+    background: url("../images/main-mb.jpg") no-repeat bottom;
+    background-size: cover;
+  }
+  .welcome {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    height: 70%;
+    margin-top: 0;
+    padding: 0;
+  }
+
+  /* ################ Section :: about ################ */
+  #about {
+    padding-top: calc(100vh + 80px);
+  }
+  .about-photo {
+    left: 50%;
+    transform: translateX(calc(-50% + 10px));
+    width: calc(100% - 120px);
+    height: 400px;
+  }
+  .about-photo::before {
+    left: -20px;
+    top: -20px;
+  }
+  .about-profile {
+    margin-left: 40px;
+    margin-top: 350px;
+  }
+  .about-profile h2 {
+    font-size: 50px;
+  }
+  .about-profile h2 span {
+    font-size: 20px;
+  }
+  .about-profile h3 {
+    font-size: 28px;
+  }
+  .about-profile p {
+    font-size: 16px;
+  }
+  .about-section {
+    margin: 50px 40px 100px;
+  }
+  .about-section p {
+    padding: 10px 0;
+    font-size: 20px;
+    line-height: 1.8em;
+  }
+  /* Skill */
+  .skills {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 10px;
+  }
+  .skill-wrap {
+    display: flex;
+    justify-content: center !important;
+  }
+  .skill {
+    width: 20%;
+    min-width: 270px;
+    height: 460px;
+  }
+  .skill h2 {
+    padding: 15px 0;
+    font-size: 30px;
+  }
+  .chart h3 {
+    font-size: 28px;
+  }
+  .skill p {
+    padding: 0 30px;
+    font-size: 16px;
+  }
+
+  /* ################ Section :: works ################ */
+  .works-inner {
+    padding: 80px 20px 40px;
+  }
+  .works-inner h2 {
+    padding: 20px;
+    line-height: 1em;
+    font-size: 58px;
+  }
+  .work-tabs article {
+    flex-direction: column;
+    height: 90vh;
+    min-height: 700px;
+  }
+  .work-tabs article > div {
+    width: 100%;
+    height: 50%;
+  }
+  .work-tabs article::before {
+    display: none;
+  }
+  .work-desc {
+    position: relative;
+    width: 35%;
+    padding: 0 30px;
+  }
+  .work-desc h3 {
+    padding: 0;
+    font-size: 50px;
+  }
+  .work-desc p {
+    padding: 3px 0;
+    line-height: 1.5em;
+  }
+  .hash {
+    margin: 10px 0 30px;
+    font-size: 16px;
+  }
+  input[name="worktab"] {
+    display: none;
+  }
+  .btns {
+    right: 30px;
+    width: 130px;
+    text-align: center;
+  }
+  /* ################ Section :: contact ################ */
+  .contact-wrap h2 {
+    font-size: 28px;
+  }
+  .contact-wrap a {
+    padding: 60px 0;
+    font-size: 54px;
+  }
+}
+
+@media screen and (max-width: 760px) {
+  /* Defalut CSS */
+  body {
+    font-size: 16px;
+  }
+
+  /* ################ Header ################ */
+  header {
+    padding: 0 30px;
+  }
+  #trigger {
+    right: 30px;
+  }
+  nav {
+    right: -300px;
+    width: 300px;
+  }
+  .nav-inner a {
+    font-size: 36px;
+  }
+
+  /* ################ Section :: main ################ */
+  #main {
+    padding: 30px;
+  }
+  .welcome {
+    height: 500px;
+  }
+  .profile {
+    width: 50px;
+    min-width: 50px;
+    height: 30px;
+  }
+  .msg.photo .profile {
+    height: 50px;
+  }
+  .msg-box {
+    padding: 8px 15px;
+    font-size: 16px;
+  }
+  .slide-down {
+    right: 20px;
+    bottom: 30px;
+  }
+
+  /* ################ Section :: about ################ */
+  .about-photo {
+    left: 50%;
+    transform: translateX(calc(-50% + 10px));
+    width: calc(100% - 60px);
+    height: 300px;
+  }
+  .about-profile {
+    margin-left: 20px;
+    margin-top: 240px;
+  }
+  .about-profile h2 {
+    font-size: 40px;
+  }
+  .about-profile h2 span {
+    font-size: 14px;
+  }
+  .about-profile h3 {
+    font-size: 20px;
+  }
+  .about-profile p {
+    width: 100%;
+    font-size: 16px;
+    padding-bottom: 5px;
+  }
+  .about-profile p span {
+    display: block;
+    margin: 0;
+    padding-right: 20px;
+  }
+  .about-section {
+    margin: 50px 20px 100px;
+  }
+  .about-section p {
+    font-size: 18px;
+  }
+  /* Skill */
+  .about-skills > h2 {
+    font-size: 42px;
+  }
+  .skill-wrap {
+    flex-wrap: wrap;
+  }
+  .skill {
+    min-width: 250px;
+    height: 420px;
+    padding: 20px 10px;
+  }
+  .skill h2 {
+    font-size: 26px;
+  }
+  .chart h3 {
+    font-size: 24px;
+  }
+  .skill p {
+    padding: 0 15px;
+    font-size: 14px;
+  }
+
+  /* ################ Section :: works ################ */
+  .works-inner h2 {
+    padding: 20px 0;
+    font-size: 30px;
+  }
+  .work-tabs article {
+    justify-content: initial;
+  }
+  .work-tabs article > div {
+    width: 100%;
+  }
+  .work-photo {
+    height: 35%;
+  }
+  .work-desc {
+    position: relative;
+    width: 65%;
+    padding: 0 10px;
+  }
+  .work-desc h3 {
+    padding: 20px 0;
+    font-size: 32px;
+    line-height: 1.2em;
+  }
+  .work-desc p {
+    font-size: 14px;
+  }
+  .btn-more {
+    padding: 8px 24px;
+    font-size: 16px;
+  }
+
+  /* ################ Section :: contact ################ */
+  .contact-inner {
+    width: 100%;
+    overflow: hidden;
+  }
+  .contact-wrap {
+    width: 100%;
+  }
+  .contact-wrap h2 {
+    font-size: 18px;
+  }
+  .contact-wrap a {
+    font-size: 42px;
+  }
+  .contact-wrap span {
+    display: block;
+    padding: 10px;
+    font-size: 24px;
+  }
+
+  /* ################ Footer ################ */
+  .footer-inner {
+    padding: 10px 30px;
+    font-size: 12px;
+  }
+}
